@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_toolbar_title"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:background="@color/colorPrimary">
+
+    <ImageButton
+        android:id="@+id/tv_back_toolbar"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:src="@mipmap/back_white_yzhg" />
+
+    <TextView
+        android:id="@+id/im_back_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_44"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_toEndOf="@+id/tv_back_toolbar"
+        android:gravity="center"
+        android:text="@string/info_back"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="@dimen/sp_14"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_title_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="标题"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:id="@+id/tv_clear_toolbar"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="右侧标题"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="@dimen/sp_14"
+        android:visibility="visible"
+        tools:ignore="RtlCompat" />
+
+
+</RelativeLayout>

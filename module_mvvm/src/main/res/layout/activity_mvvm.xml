@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <cn.yzhg.common.weight.ToolBarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:setTitleSize="@dimen/sp_16"
+            app:setTitleText="免费API" />
+
+        <Button
+            android:id="@+id/But_Joke"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="12dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="@{clickListener}"
+            android:text="笑话大全"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/But_Picture"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="12dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="@{clickListener}"
+            android:text="美图"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+</layout>

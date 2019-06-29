@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="jokeText"
+            type="android.text.SpannableStringBuilder" />
+
+        <variable
+            name="againListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5"
+        android:orientation="vertical">
+
+        <cn.yzhg.common.weight.ToolBarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setTitleSize="@dimen/sp_16"
+            app:setTitleText="笑话大全" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="@dimen/dp_30"
+            android:text="开心一笑"
+            android:textColor="#FF00FF"
+            android:textSize="16sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_30"
+                android:lineSpacingExtra="@dimen/dp_8"
+                android:text="@{jokeText}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_14" />
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/But_Again_Joke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_marginEnd="@dimen/dp_30"
+            android:background="@color/colorPrimary"
+            android:onClick="@{againListener}"
+            android:text="再来一则"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="@dimen/sp_16" />
+
+
+    </LinearLayout>
+
+</layout>

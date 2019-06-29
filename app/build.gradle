@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "cn.yzhg.route"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        //     javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            force 'com.android.support:support-v4:27.1.0'
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    dataBinding {
+        //使用MVVM框架
+        enabled = true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation project(':lib_common')
+    if (!isModule.toBoolean()) {
+        implementation project(':module_shop')
+        implementation project(':module_mine')
+        implementation project(':module_main')
+        implementation project(':module_home')
+        implementation project(':module_mvvm')
+    }
+}

@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.yzhg.shop">
+
+ <!--   集成开发模式下的AndroidManifest.xml,
+
+    这里的xml文件不能声明APP名称,图标等属性-->
+
+    <application android:theme="@style/AppTheme">
+        <activity
+            android:name="cn.yzhg.shop.ShopActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

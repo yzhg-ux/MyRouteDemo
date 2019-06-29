@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yzhg.mvvm">
+
+    <application
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".MVVMActivity" />
+        <activity android:name=".ui.activity.Joke.JokeActivity" />
+        <activity android:name=".ui.activity.picture.PictureActivity" />
+
+    </application>
+</manifest>
