@@ -6,4 +6,7 @@
     <string name="title_notifications">进修</string>
     <string name="title_study">进修</string>
     <string name="title_mine">我的</string>
+    <string name="java_module">JAVAEE</string>
+    <string name="three_module">三方框架运用</string>
+    <string name="common_module">常用</string>
 </resources>
