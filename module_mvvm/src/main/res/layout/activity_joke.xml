@@ -42,31 +42,40 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_16">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_30"
-                android:layout_marginEnd="@dimen/dp_30"
-                android:lineSpacingExtra="@dimen/dp_8"
-                android:text="@{jokeText}"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/sp_14" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:layout_marginEnd="@dimen/dp_30"
+                    android:lineSpacingExtra="@dimen/dp_8"
+                    android:text="@{jokeText}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_14" />
+
+                <Button
+                    android:id="@+id/But_Again_Joke"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:layout_marginEnd="@dimen/dp_30"
+                    android:background="@color/colorPrimary"
+                    android:onClick="@{againListener}"
+                    android:text="再来一则"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="@dimen/sp_16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_120" />
+
+            </LinearLayout>
         </ScrollView>
-
-
-        <Button
-            android:id="@+id/But_Again_Joke"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_30"
-            android:layout_marginTop="@dimen/dp_30"
-            android:layout_marginEnd="@dimen/dp_30"
-            android:background="@color/colorPrimary"
-            android:onClick="@{againListener}"
-            android:text="再来一则"
-            android:textColor="@color/color_FFFFFF"
-            android:textSize="@dimen/sp_16" />
-
 
     </LinearLayout>
 
