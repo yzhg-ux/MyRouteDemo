@@ -1,23 +1,14 @@
-if (isModule.toBoolean()) {
-    apply plugin: 'com.android.application'
-} else {
-    apply plugin: 'com.android.library'
-}
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-
-        //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
             }
         }
     }
@@ -31,19 +22,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    sourceSets {
-        main {
-            if (isModule.toBoolean()) {
-                manifest.srcFile 'src/main/module/AndroidManifest.xml'
-            } else {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-                //集成开发模式下排除debug文件夹中的所有Java文件
-                java {
-                    exclude 'debug/**'
-                }
-            }
-        }
-    }
     dataBinding {
         //使用MVVM框架
         enabled = true
@@ -56,8 +34,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-
-    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    kapt 'com.alibaba:arouter-compiler:1.2.2'
     implementation project(':lib_common')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

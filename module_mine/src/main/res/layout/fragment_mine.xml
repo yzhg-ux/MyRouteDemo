@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <Button
@@ -14,6 +14,34 @@
         android:text="MVVM框架"
         android:textColor="#FFFFFF"
         android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/butCustomJavaView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="自定义控件(JAVA)"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+
+        <Button
+            android:id="@+id/butCustomKotlinView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="自定义控件Kotlin"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+    </LinearLayout>
 
 
 </LinearLayout>

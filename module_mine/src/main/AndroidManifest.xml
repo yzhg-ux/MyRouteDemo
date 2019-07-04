@@ -5,6 +5,9 @@
         <activity
             android:name="cn.yzhg.mine.MineActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".anim.java.JavaAnimHomeActivity" />
+        <activity android:name=".anim.kotlin.KotlinAnimHomeActivity" />
+        <activity android:name=".base.MyWebViewActivity" />
     </application>
 
 </manifest>

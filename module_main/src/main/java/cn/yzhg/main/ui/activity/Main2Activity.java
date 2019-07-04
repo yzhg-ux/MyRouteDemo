@@ -13,6 +13,7 @@ import com.dcloud.update.UpdateSDK;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import butterknife.ButterKnife;
+import cn.yzhg.common.constant.Constant;
 import cn.yzhg.main.R;
 
 public class Main2Activity extends AppCompatActivity {
@@ -28,21 +29,21 @@ public class Main2Activity extends AppCompatActivity {
              * 历 史: (版本) 1.0
              * 描 述: 找到homeFragment
              */
-            Fragment fragment = (Fragment) ARouter.getInstance().build("/home/HomeFragment").navigation();
+            Fragment fragment = (Fragment) ARouter.getInstance().build(Constant.AR_HOME_FRAGMENT).navigation();
             FragmentManager supportFragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.message, fragment);
             fragmentTransaction.commit();
             return true;
         } else if (id == R.id.navigation_dashboard) {
-            Fragment fragment = (Fragment) ARouter.getInstance().build("/shop/ShopFragment").navigation();
+            Fragment fragment = (Fragment) ARouter.getInstance().build(Constant.AR_SHOP_FRAGMENT).navigation();
             FragmentManager supportFragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.message, fragment);
             fragmentTransaction.commit();
             return true;
         } else if (id == R.id.navigation_person) {
-            Fragment fragment = (Fragment) ARouter.getInstance().build("/mine/MineFragment").navigation();
+            Fragment fragment = (Fragment) ARouter.getInstance().build(Constant.AR_MINE_FRAGMENT).navigation();
             FragmentManager supportFragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.message, fragment);
@@ -59,13 +60,13 @@ public class Main2Activity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         //检查更新
-     //   new UpdateSDK().check(this);
+        //   new UpdateSDK().check(this);
 
         mTextMessage = findViewById(R.id.message);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        Fragment fragment = (Fragment) ARouter.getInstance().build("/home/HomeFragment").navigation();
+        Fragment fragment = (Fragment) ARouter.getInstance().build(Constant.AR_HOME_FRAGMENT).navigation();
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.message, fragment);

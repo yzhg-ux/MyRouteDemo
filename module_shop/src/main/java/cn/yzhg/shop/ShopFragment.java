@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
+import cn.yzhg.common.constant.Constant;
+
 /**
  * 类 名: MineFragment
  * 作 者: yzhg
@@ -18,7 +20,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
  * 历 史: (版本) 作者 时间 注释
  * 描 述:
  */
-@Route(path = "/shop/ShopFragment")
+@Route(path = Constant.AR_SHOP_FRAGMENT)
 public class ShopFragment extends Fragment {
 
     @Nullable

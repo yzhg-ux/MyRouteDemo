@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
@@ -9,11 +11,9 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
-        //     javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
             }
         }
         multiDexEnabled true
@@ -51,12 +51,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation project(':lib_common')
-    if (!isModule.toBoolean()) {
-        implementation project(':module_shop')
-        implementation project(':module_mine')
-        implementation project(':module_main')
-        implementation project(':module_home')
-        implementation project(':module_mvvm')
-    }
+    implementation project(':module_shop')
+    implementation project(':module_mine')
+    implementation project(':module_main')
+    implementation project(':module_home')
+    implementation project(':module_mvvm')
 }

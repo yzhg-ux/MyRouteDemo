@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
+import cn.yzhg.common.constant.Constant;
+
 /**
  * 类 名: HomeFragment
  * 作 者: yzhg
@@ -24,7 +26,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
  * 历 史: (版本) 1.0
  * 描 述:  @Route(path = "/home/HomeFragment", group = "home")  指明路径和分组
  */
-@Route(path = "/home/HomeFragment")
+@Route(path = Constant.AR_HOME_FRAGMENT)
 public class HomeFragment extends Fragment {
 
     @Nullable

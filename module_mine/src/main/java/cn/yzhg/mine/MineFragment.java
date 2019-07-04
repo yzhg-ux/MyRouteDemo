@@ -8,10 +8,10 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.yzhg.tool.base.fragment.BasicFragment;
 
 import cn.yzhg.common.constant.Constant;
 
@@ -23,22 +23,30 @@ import cn.yzhg.common.constant.Constant;
  * 历 史: (版本) 作者 时间 注释
  * 描 述:
  */
-@Route(path = "/mine/MineFragment")
-public class MineFragment extends Fragment {
+@Route(path = Constant.AR_MINE_FRAGMENT)
+public class MineFragment extends BasicFragment {
 
-    private Button butMvvm;
+    private Button butCustomJavaView;
+    private Button butCustomKotlinView;
+    private Button butMVVM;
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle bundle) {
-        View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_mine, container, false);
-        butMvvm = view.findViewById(R.id.but_MVVM);
-        return view;
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View viewLayout = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_mine, container, false);
+        this.butCustomKotlinView = viewLayout.findViewById(R.id.butCustomKotlinView);
+        this.butCustomJavaView = viewLayout.findViewById(R.id.butCustomJavaView);
+        this.butMVVM = viewLayout.findViewById(R.id.but_MVVM);
+        return viewLayout;
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        butMvvm.setOnClickListener(v -> ARouter.getInstance().build(Constant.AROUTER_ACTIVITY_MVVM).navigation());
+        butMVVM.setOnClickListener(v -> ARouter.getInstance().build(Constant.AROUTER_ACTIVITY_MVVM).navigation());
+        butCustomJavaView.setOnClickListener(v -> ARouter.getInstance().build(Constant.AR_ANIM_JAVA_HOME_ACTIVITY).navigation());
+        butCustomKotlinView.setOnClickListener(v -> ARouter.getInstance().build(Constant.AR_ANIM_KOTLIN_HOME_ACTIVITY).navigation(context));
     }
+
 }
